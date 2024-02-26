@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkefni 7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400;1,600;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/new.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/form.csss">
+    <link rel="stylesheet" href="css/tafla.css">
+    <link rel="stylesheet" href="css/topmenu.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/iconmoon.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <style>
+        #slideset2 {
+            height: 30em; 
+            width: 100%; /* Adjust width as needed */
+            margin: 0 auto; /* Center the slideshow */
+            position: relative;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        #slideset2 > * {
+            position: absolute;
+            top: 100%; 
+            left: 0%;
+            animation: 12s autoplay2 infinite ease-in-out;
+            text-align: right;
+        }
+
+        @keyframes autoplay2 {
+            0% {top: 100%} /* Start from the right side */
+            4% {top: 0} /* Move to the center */
+            25% {top: 0} /* Stay in the center */
+            27% {top: -100%} /* Exit to the left */
+            100% {top: -100%} /* Stay hidden to the left */
+        }
+
+        #slideset2 > *:nth-child(1) {animation-delay: 0s}
+        #slideset2 > *:nth-child(2) {animation-delay: 4s}
+        #slideset2 > *:nth-child(3) {animation-delay: 8s}
+
+        @media screen and (max-width: 768px) {
+            #slideset2 {
+                width: 100%; /* Adjust width for smaller screens */
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="topnav">
+        <input type="checkbox" class="menuinput" id="toggle">
+        <label for="toggle" class="menulabel"><span class="icon-list2"></span></label>
+        <div class="topmenu">
+          <a href="index.html"><span class="icon-home"></span>Home</a>
+          <a href="vörur.html"><span class="icon-cart"></span>Vörur</a>
+          <a href="umokkur.html"><span class="icon-cool"></span>Um Mig</a>
+          <a href="#popup3"><span class="icon-user"></span>Innskráning</a> 
+          <div class="socalbutts">
+            <a href="https://www.facebook.com/danieldarri.ragnarsson/"><span class="icon-facebook2"></span></a>
+            <a href="https://www.instagram.com/daniel_darri_/"><span class="icon-instagram"></span></a>
+          </div>
+        </div>
+      </nav>
+      <header>
+            <section class="landing container">
+              <div> 
+                <img class="animate__zoomIn" src="images/EldenRing1.jpg" height="500" width="500" alt="logopeace">
+                <h1>Elden Ring</h1>
+              </div>
+              <div>
+                <img class="animate__lightSpeedInRight" src="images/logo f sidu.svg">
+              </div>
+            </section>
+      </header>
+      <div class="blueBg">
+        <section class="col-1 container">
+          <div class="value">
+            <section>
+              <h3>
+            <div id=slideset2>
+                <div>
+                  <img src="images/EldenRing3.jpg" alt="Mynd">
+                </div>
+        
+                <div>
+                  <img src="images/EldenRing4.jpg" alt="Mynd2">
+                </div>
+        
+                <div>
+                  <img src="images/EldenRing5.jpg" alt="Mynd3">
+                </div>
+        </h3>
+        <div>
+           Elden Ring is an action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment. Set in a vast and intricate open-world environment, "Elden Ring" promises to deliver a captivating narrative experience crafted by Hidetaka Miyazaki, the creator of the critically acclaimed "Dark Souls" series, and George R. R. Martin, the renowned author of "A Song of Ice and Fire" novels. With its blend of intense combat, rich lore, and dynamic exploration, "Elden Ring" aims to push the boundaries of the genre and immerse players in a dark and fantastical universe filled with mystery and adventure.
+        </div>
+<main>
+      <div id="popup3" class="overlay">
+        <form action="postur-ok.html" method="GET"><!--"POST" er notað þegar upplýsingar eru sendar úr formi-->
+            <fieldset class="register"><!--nota klasa til að geta haft aðra forma með öðru útliti - sjá css-->
+              <legend>Innskráning</legend>
+              <a class="close" href="#">&times;</a>
+              <p><!--autofocus-->
+                  Nafn:  
+                  <input type="text" 
+                          name="nafn" 
+                          placeholder="Full name" 
+                          required 
+                          title="Vinsamlegast skráið nafn"> <!--ATH! input hefur ekki lokunartag -->
+                          
+              </p>
+                <p>Kyn: 
+                  <input type="radio" name="kyn" value="Hann" id="Hann">
+                  <label for="Hann">Hann</label> |
+                  <input type="radio" name="kyn" value="Hún" id="Hún"> 
+                  <label for="Hún">Hún</label> |
+                  <input type="radio" name="kyn" value="Hán" id="Hán"> 
+                  <label for="Hán">Hán</label> 
+                </p>
+                <p>
+                    Símanúmer: 
+                    <input  type="text" 
+                            name="sími" 
+                            placeholder="Telephone (7 digits)"
+                            title="Vinsamlegast skráið aðeins 7 tölustafi"
+                            required
+                            pattern="\d{3}(?:[\-\s]?)\d{4}">
+                </p>    <!-- http://html5pattern.com/Phones "\d{3}(?:[\-\s]?)\d{4}" -->
+                <p>
+                  Tölvupóstur: 
+                  <input  type="email" 
+                          name="tölvupóstur" 
+                          placeholder="Email address" 
+                          required>
+                </p>
+                <p>Skilaboð:
+                    <!--https://www.w3schools.com/tags/att_textarea_rows.asp-->
+                    <textarea rows="4" name="comment" placeholder="Comment"></textarea>
+                </p>
+                <p>
+                  <input type="checkbox" name="postlist" value="OK" id="plist"> 
+                  <label for="plist">Skráið mig á póstlistann</label> |
+                  <input type="checkbox" name="subscription" value="OK" id="sub"> 
+                  <label for="sub">Gerast áskrifandi </label>
+                </p><p>
+                </p>
+                <p class="center"><input type="submit" name="submit" value="Send"></p>
+            </fieldset>
+        </form>
+      </div>
+      <input type="checkbox" id="toggle-chat" class="toggle-chat-checkbox">
+  <label for="toggle-chat" class="question-mark-btn"><span class="icon-bubbles"></span></label>
+    <div id="chatBox" class="chat-box">
+          <h2>Hafa Samband</h2>
+          <a class="close" href="#"></a>
+      <div class="content">
+        <form action="register" method="get"></form>
+            <p><em>Skilaboð</em></p>
+          <p>
+            <label>Nafn</label><br>
+            <input type="text" name="Nafn">
+          </p>
+          <p>
+            <label>Email</label><br>
+            <input type="email" name="email" required>
+          </p>
+          <p>
+            <label>Símanúmer</label><br>
+            <input type="símanúmer" name="símanúmer" required>
+          </p>
+          <p>
+            <label>Comments</label><br>
+            <textarea rows="5" placeholder="Skilaboð"></textarea>
+          </p>
+          <p>
+            <input type="Submit" name="Senda">
+          </p>
+    
+      </div>
+    <div>
+    </main>
+    <br>
+    <br>
+    <footer class="container vibrant-footer">
+      <div class="footer-content">
+          <dl>   
+              <dt>Nafn</dt>
+              <dd>Daníel Darri Ragnarsson</dd>
+              <dt>Tölvupóstur</dt>
+              <dd>danieldarri2005@gmail.com</dd>
+              <dt>Vefhönnun</dt>
+              <dd>VEFÞ2VHB5AU, tölvubraut Tækniskólans</dd>
+          </dl>
+      </div>
+  </footer>
+</body>
+</html>

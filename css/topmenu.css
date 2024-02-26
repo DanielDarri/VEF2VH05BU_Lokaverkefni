@@ -1,0 +1,87 @@
+.topnav {
+    background-color: var(--nc-lk-1);
+}
+.topmenu {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    top: 3rem;
+    right: -30rem;
+    background-color: var(--nc-lk-1);
+    width: 80%;
+    z-index: 3;
+    padding: 2rem;
+    transition: all .5s ease;
+}
+.toggle-chat-checkbox {
+    display: none;
+}
+.question-mark-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+.chat-box {
+    position: fixed;
+    right: 0;
+    bottom: -100%;
+    width: 300px; 
+    z-index: 999;
+    transition: bottom 0.5s ease;
+    background-color: var(--nc-d-lk-1);
+    padding: 1rem;
+}
+.toggle-chat-checkbox:checked ~ #chatBox {
+    bottom: 0;
+}
+.topmenu a {
+    display: block;
+    color: var(--nc-lk-tx);
+    padding: .5rem;
+    text-decoration: none;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.socalbutts {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+.menuinput {
+    display: none;
+}
+.menulabel {
+    color: var(--nc-ac-tx);
+    font-size: 2rem;
+    position: fixed;
+    top: .5rem;
+    right: 1rem; 
+    z-index: 100;   
+}
+.menuinput:checked ~ .topmenu {
+    right: 0; /* Show the menu when checkbox is checked */
+}
+
+
+/******* @media ********/
+
+@media screen and (min-width:48rem) {
+    .topmenu {
+        position: relative;
+        flex-flow: row;
+        max-width: 100rem;
+        margin: auto;
+        top:0;
+        width: 100%;
+        right: 0;
+        padding: 0;
+        transition: none;
+    }
+    .menulabel {
+        display: none;
+    }
+    
+}

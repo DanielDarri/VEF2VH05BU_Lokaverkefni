@@ -1,0 +1,104 @@
+.summary td {
+    width: 25%;
+}
+.summary table  {
+    width: 100%;
+}
+.summary table th
+
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+  
+  table tr {
+    background-color: var(--nc-d-lk-2);
+    border: 1px solid #ffffff;
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+      padding: .625em;
+      text-align: left;
+  }
+  .test {
+    text-align: center;
+    width: 100%;
+  }
+  .summary table th, .summary table td {
+    padding: .625em;
+    text-align: left;
+}
+table tr:nth-child(odd) {
+  background-color: var(--nc-d-lk-1); /* Light blue color for odd rows */
+}
+
+table tr:nth-child(even) {
+  background-color: black; /* Light gray color for even rows */
+}
+
+
+/* Assigning specific widths to each column */
+.summary table th:nth-child(1), /* Who */
+.summary table td:nth-child(1) {
+    width: 15%;
+}
+
+.summary table th:nth-child(2), /* Where */
+.summary table td:nth-child(2) {
+    width: 45%;
+}
+
+.summary table th:nth-child(3), /* When */
+.summary table td:nth-child(3) {
+    width: 20%;
+}
+
+.summary table th:nth-child(4), /* Check In */
+.summary table td:nth-child(4) {
+    width: 20%;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 600px) {
+  .summary table {
+      width: 100%;
+  }
+
+  .summary table tr {
+      display: block;
+      margin-bottom: .625em;
+  }
+
+  .summary table td {
+      display: block;
+      width: 100%;
+      text-align: right;
+  }
+
+  .summary table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+
+  .summary table td:last-child {
+      border-bottom: 0;
+  }
+
+  /* Ensuring the odd/even row color styling is still applied */
+  .summary table tr:nth-child(odd) {
+    background-color: blue /* Light blue for odd rows */
+}
+
+.summary table tr:nth-child(even) {
+  background-color: var(--nn-d-chat); /* Light gray for even rows */
+}
+}
